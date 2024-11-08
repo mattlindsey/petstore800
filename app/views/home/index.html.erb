@@ -23,20 +23,24 @@
 
 <section id="about-matt">
   <h2>About Matt</h2>
-  <p><%= @about_matt.biography %></p>
+  <p><%= @about_matt[:biography] %></p>
   <h3>Hobbies</h3>
   <ul>
-    <% @about_matt.hobbies.each do |hobby| %>
+    <% @about_matt[:hobbies].each do |hobby| %>
       <li><%= hobby %></li>
     <% end %>
   </ul>
   <h3>Notable Achievements</h3>
   <ul>
-    <% @about_matt.achievements.each do |achievement| %>
+    <% @about_matt[:achievements].each do |achievement| %>
       <li><%= achievement %></li>
     <% end %>
   </ul>
   <h3>Contact Information</h3>
-  <p>Email: <%= @about_matt.contact_email %></p>
-  <p>Social Media: <%= @about_matt.social_media_links %></p>
+  <p>Email: <%= @about_matt[:contact_email] %></p>
+  <p>Social Media: 
+    <% @about_matt[:social_media_links].each do |link| %>
+      <a href="<%= link %>"><%= link %></a><br>
+    <% end %>
+  </p>
 </section>
