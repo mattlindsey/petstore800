@@ -1,0 +1,46 @@
+<h1>Stuff Matt Thinks is Cool!</h1>
+
+<section id="blog-articles">
+  <h2>Blog Articles</h2>
+  <% @articles.each do |article| %>
+    <article>
+      <h3><%= link_to article.title, article_path(article) %></h3>
+      <p><%= article.excerpt %></p>
+    </article>
+  <% end %>
+</section>
+
+<section id="pictures">
+  <h2>Pictures</h2>
+  <div class="picture-grid">
+    <% @pictures.each do |picture| %>
+      <div class="picture-thumbnail">
+        <%= link_to image_tag(picture.thumbnail_url), picture.full_size_url %>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<section id="about-matt">
+  <h2>About Matt</h2>
+  <p><%= @about_matt[:biography] %></p>
+  <h3>Hobbies</h3>
+  <ul>
+    <% @about_matt[:hobbies].each do |hobby| %>
+      <li><%= hobby %></li>
+    <% end %>
+  </ul>
+  <h3>Notable Achievements</h3>
+  <ul>
+    <% @about_matt[:achievements].each do |achievement| %>
+      <li><%= achievement %></li>
+    <% end %>
+  </ul>
+  <h3>Contact Information</h3>
+  <p>Email: <%= @about_matt[:contact_email] %></p>
+  <p>Social Media: 
+    <% @about_matt[:social_media_links].each do |link| %>
+      <a href="<%= link %>"><%= link %></a><br>
+    <% end %>
+  </p>
+</section>
