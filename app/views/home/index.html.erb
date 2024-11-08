@@ -1,46 +1,46 @@
-<h1>Stuff Matt Thinks is Cool!</h1>
+<h1 class="text-3xl font-bold mb-4">Stuff Matt Thinks is Cool!</h1>
 
-<section id="blog-articles">
-  <h2>Blog Articles</h2>
+<section id="blog-articles" class="mb-8">
+  <h2 class="text-2xl font-semibold mb-2">Blog Articles</h2>
   <% @articles.each do |article| %>
-    <article>
-      <h3><%= link_to article.title, article_path(article) %></h3>
-      <p><%= article.excerpt %></p>
+    <article class="mb-4">
+      <h3 class="text-xl font-medium"><%= link_to article.title, article_path(article), class: "text-blue-500 hover:underline" %></h3>
+      <p class="text-gray-700"><%= article.excerpt %></p>
     </article>
   <% end %>
 </section>
 
-<section id="pictures">
-  <h2>Pictures</h2>
-  <div class="picture-grid">
+<section id="pictures" class="mb-8">
+  <h2 class="text-2xl font-semibold mb-2">Pictures</h2>
+  <div class="grid grid-cols-3 gap-4">
     <% @pictures.each do |picture| %>
       <div class="picture-thumbnail">
-        <%= link_to image_tag(picture.thumbnail_url), picture.full_size_url %>
+        <%= link_to image_tag(picture.thumbnail_url, class: "rounded shadow-md"), picture.full_size_url %>
       </div>
     <% end %>
   </div>
 </section>
 
-<section id="about-matt">
-  <h2>About Matt</h2>
-  <p><%= @about_matt[:biography] %></p>
-  <h3>Hobbies</h3>
-  <ul>
+<section id="about-matt" class="mb-8">
+  <h2 class="text-2xl font-semibold mb-2">About Matt</h2>
+  <p class="text-gray-700"><%= @about_matt[:biography] %></p>
+  <h3 class="text-xl font-medium mt-4">Hobbies</h3>
+  <ul class="list-disc list-inside">
     <% @about_matt[:hobbies].each do |hobby| %>
-      <li><%= hobby %></li>
+      <li class="text-gray-700"><%= hobby %></li>
     <% end %>
   </ul>
-  <h3>Notable Achievements</h3>
-  <ul>
+  <h3 class="text-xl font-medium mt-4">Notable Achievements</h3>
+  <ul class="list-disc list-inside">
     <% @about_matt[:achievements].each do |achievement| %>
-      <li><%= achievement %></li>
+      <li class="text-gray-700"><%= achievement %></li>
     <% end %>
   </ul>
-  <h3>Contact Information</h3>
-  <p>Email: <%= @about_matt[:contact_email] %></p>
-  <p>Social Media: 
+  <h3 class="text-xl font-medium mt-4">Contact Information</h3>
+  <p class="text-gray-700">Email: <%= @about_matt[:contact_email] %></p>
+  <p class="text-gray-700">Social Media: 
     <% @about_matt[:social_media_links].each do |link| %>
-      <a href="<%= link %>"><%= link %></a><br>
+      <a href="<%= link %>" class="text-blue-500 hover:underline"><%= link %></a><br>
     <% end %>
   </p>
 </section>
