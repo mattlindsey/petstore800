@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @articles = Articles.all
+    @articles = Article.all
     @pictures = Picture.all
     @about_matt = {
       biography: "Matt is a software developer with a passion for technology.",
