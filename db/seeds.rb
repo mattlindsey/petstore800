@@ -7,3 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+[ "My First Blog Post", "Learning to Code", "Ruby on Rails Tips" ].each do |title|
+  Article.find_or_create_by!(
+    title: title,
+    content: Faker::Lorem.paragraphs(number: 3).join("\n\n")
+  )
+end
