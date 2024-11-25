@@ -1,0 +1,11 @@
+<div class="pt-6 md:p-8 md:text-left space-y-4">
+  <h1 class="text-3xl font-bold mb-4 text-center">Favorites</h1>
+  <ul class="list-disc list-inside">
+    <% @favorites.each do |favorite| %>
+      <li class="text-gray-700">
+        <h2 class="text-xl font-medium"><%= favorite[:title] %></h2>
+        <p><%= favorite[:description] %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
