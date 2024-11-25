@@ -22,4 +22,7 @@
   .nav-list {
     @apply flex space-x-4;
   }
+  .nav-item-home {
+    @apply text-white hover:text-gray-400;
+  }
 }

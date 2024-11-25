@@ -65,3 +65,4 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 3.0"
+gem "font-awesome-sass", "~> 5.15"
