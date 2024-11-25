@@ -13,4 +13,10 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :articles, only: [ :index, :show, :new, :create ]
+
+  get "about" => "about#index", as: :about
+  get "blog" => "blog#index", as: :blog
+  get "gallery" => "gallery#index", as: :gallery
+  get "favorites" => "favorites#index", as: :favorites
+  get "contact" => "contact#index", as: :contact
 end

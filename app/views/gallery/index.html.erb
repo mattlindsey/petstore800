@@ -1,0 +1,10 @@
+<div class="pt-6 md:p-8 md:text-left space-y-4">
+  <h1 class="text-3xl font-bold mb-4 text-center">Gallery</h1>
+  <div class="grid grid-cols-3 gap-4">
+    <% @pictures.each do |picture| %>
+      <div class="picture-thumbnail">
+        <%= link_to image_tag(picture.thumbnail_url, class: "rounded shadow-md"), picture.full_size_url %>
+      </div>
+    <% end %>
+  </div>
+</div>

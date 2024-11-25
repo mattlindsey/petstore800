@@ -11,3 +11,15 @@
 }
 
 */
+
+@layer components {
+  .nav-bar {
+    @apply bg-gray-800 p-4;
+  }
+  .nav-item {
+    @apply text-white hover:text-gray-400;
+  }
+  .nav-list {
+    @apply flex space-x-4;
+  }
+}

@@ -1,0 +1,23 @@
+<div class="pt-6 md:p-8 md:text-left space-y-4">
+  <h1 class="text-3xl font-bold mb-4 text-center">About Matt</h1>
+  <p class="text-gray-700"><%= @about_matt[:biography] %></p>
+  <h3 class="text-xl font-medium mt-4">Hobbies</h3>
+  <ul class="list-disc list-inside">
+    <% @about_matt[:hobbies].each do |hobby| %>
+      <li class="text-gray-700"><%= hobby %></li>
+    <% end %>
+  </ul>
+  <h3 class="text-xl font-medium mt-4">Notable Achievements</h3>
+  <ul class="list-disc list-inside">
+    <% @about_matt[:achievements].each do |achievement| %>
+      <li class="text-gray-700"><%= achievement %></li>
+    <% end %>
+  </ul>
+  <h3 class="text-xl font-medium mt-4">Contact Information</h3>
+  <p class="text-gray-700">Email: <%= @about_matt[:contact_email] %></p>
+  <p class="text-gray-700">Social Media: 
+    <% @about_matt[:social_media_links].each do |link| %>
+      <a href="<%= link %>" class="text-blue-500 hover:underline"><%= link %></a><br>
+    <% end %>
+  </p>
+</div>
